@@ -6,7 +6,7 @@ const Footer = () => {
           © {new Date().getFullYear()} Dhaval Vachhani. Built with passion for WordPress.
         </span>
         <span className="text-xs text-muted-foreground">
-          Sr. WordPress Developer · Ahmedabad, India
+          Sr. WordPress Developer & Project Manager · Ahmedabad, India
         </span>
       </div>
     </footer>

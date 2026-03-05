@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Linkedin } from "lucide-react";
 import { Mail, Github, Globe, ArrowUpRight } from "lucide-react";
 
 const ContactSection = () => {
@@ -33,6 +34,7 @@ const ContactSection = () => {
 
           <div className="flex items-center justify-center gap-6">
             {[
+              { icon: Linkedin, label: "LinkedIn", url: "https://in.linkedin.com/in/mrdvpatel" },
               { icon: Github, label: "GitHub", url: "https://github.com/mrdvpatel" },
               { icon: Globe, label: "WordPress.org", url: "https://profiles.wordpress.org/dvpatel/" },
             ].map((link) => (
