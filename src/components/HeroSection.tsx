@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Globe, Code2 } from "lucide-react";
+import { ArrowDown, Github, Globe, Code2, Briefcase } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
@@ -37,6 +37,8 @@ const HeroSection = () => {
           <span className="text-gradient glow-text">Dhaval</span>
           <br />
           <span className="text-foreground">WordPress Developer</span>
+          <br />
+          <span className="text-foreground text-3xl md:text-4xl lg:text-5xl">&amp; Project Manager</span>
         </motion.h1>
 
         <motion.p
@@ -45,9 +47,9 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          7+ years building high-performance WordPress solutions — from custom themes
-          and plugins to core contributions. Turning complex ideas into elegant,
-          scalable websites.
+          7+ years building and managing high-performance WordPress solutions — from custom themes
+          and plugins to core contributions. Leading projects from concept to launch with
+          precision and creativity.
         </motion.p>
 
         <motion.div
@@ -63,7 +65,7 @@ const HeroSection = () => {
             Let's Work Together
           </a>
           <a
-            href="#plugins"
+            href="#portfolio"
             className="px-8 py-3.5 rounded-lg border border-border text-foreground font-semibold text-base hover:bg-surface transition-colors"
           >
             View My Work
@@ -79,6 +81,7 @@ const HeroSection = () => {
         >
           {[
             { icon: Code2, value: "7+", label: "Years Experience" },
+            { icon: Briefcase, value: "50+", label: "Projects Managed" },
             { icon: Globe, value: "4", label: "WordPress Plugins" },
             { icon: Github, value: "6+", label: "WP Core Teams" },
           ].map((stat) => (

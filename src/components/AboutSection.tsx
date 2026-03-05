@@ -33,11 +33,10 @@ const AboutSection = () => {
           </h3>
 
           <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-            I'm Dhaval Vachhani — a Senior WordPress Developer based in Ahmedabad, India, 
+            I'm Dhaval Vachhani — a Senior WordPress Developer & Project Manager based in Ahmedabad, India, 
             with over 7 years of hands-on experience. I specialize in custom theme development, 
-            plugin engineering, and optimizing WordPress at scale. My expertise spans PHP, JavaScript, 
-            REST APIs, and third-party integrations, delivering solutions that are clean, performant, 
-            and user-centric.
+            plugin engineering, and managing end-to-end project delivery. My expertise spans PHP, JavaScript, 
+            REST APIs, and third-party integrations — leading teams and clients from concept to launch.
           </p>
 
           <p className="text-muted-foreground text-lg leading-relaxed mb-12">
@@ -51,7 +50,7 @@ const AboutSection = () => {
             {[
               { icon: MapPin, label: "Location", value: "Ahmedabad, IN" },
               { icon: Calendar, label: "Member Since", value: "Sept 2017" },
-              { icon: Award, label: "Job Title", value: "Sr. WP Dev" },
+              { icon: Award, label: "Job Title", value: "Sr. Dev & PM" },
               { icon: Users, label: "WordCamp", value: "Volunteer" },
             ].map((item) => (
               <div key={item.label} className="p-4 rounded-xl bg-surface border border-border">
