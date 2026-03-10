@@ -6,104 +6,107 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden"
     >
       {/* Background image */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-60"
+        className="absolute inset-0 bg-cover bg-center opacity-40"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
 
-      <div className="relative z-10 container mx-auto px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface/50 backdrop-blur-sm mb-8">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse-glow" />
-            <span className="text-sm text-muted-foreground">Available for freelance projects</span>
-          </div>
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-tight mb-6"
-        >
-          <span className="text-foreground">Hi, I'm </span>
-          <span className="text-gradient glow-text">Dhaval</span>
-          <br />
-          <span className="text-foreground">WordPress Developer</span>
-          <br />
-          <span className="text-foreground text-3xl md:text-4xl lg:text-5xl">&amp; Project Manager</span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
-        >
-          7+ years building and managing high-performance WordPress solutions — from custom themes
-          and plugins to core contributions. Leading projects from concept to launch with
-          precision and creativity.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-wrap items-center justify-center gap-4 mb-16"
-        >
-          <a
-            href="#contact"
-            className="px-8 py-3.5 rounded-lg bg-primary text-primary-foreground font-semibold text-base hover:opacity-90 transition-opacity glow-border"
+      <div className="relative z-10 container mx-auto px-6 pt-32 pb-20">
+        <div className="max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Let's Work Together
-          </a>
-          <a
-            href="#portfolio"
-            className="px-8 py-3.5 rounded-lg border border-border text-foreground font-semibold text-base hover:bg-surface transition-colors"
-          >
-            View My Work
-          </a>
-        </motion.div>
-
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="flex flex-wrap items-center justify-center gap-8 md:gap-16"
-        >
-          {[
-            { icon: Code2, value: "7+", label: "Years Experience" },
-            { icon: Briefcase, value: "50+", label: "Projects Managed" },
-            { icon: Globe, value: "4", label: "WordPress Plugins" },
-            { icon: Github, value: "6+", label: "WP Core Teams" },
-          ].map((stat) => (
-            <div key={stat.label} className="flex items-center gap-3">
-              <stat.icon className="w-5 h-5 text-primary" />
-              <div className="text-left">
-                <div className="text-2xl font-bold text-foreground">{stat.value}</div>
-                <div className="text-xs text-muted-foreground">{stat.label}</div>
-              </div>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border bg-card/60 backdrop-blur-sm mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+              <span className="text-xs text-muted-foreground">Open to new projects</span>
             </div>
-          ))}
-        </motion.div>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-5"
+          >
+            <span className="text-foreground">Dhaval Vachhani</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.45 }}
+            className="text-xl md:text-2xl text-muted-foreground font-light mb-6"
+          >
+            WordPress Developer & Project Manager
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.55 }}
+            className="text-base text-muted-foreground/80 max-w-xl mb-10 leading-relaxed"
+          >
+            I build custom WordPress solutions — themes, plugins, and full platforms — 
+            and manage projects from first conversation to final launch. 
+            7+ years deep in the WordPress ecosystem.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.65 }}
+            className="flex flex-wrap items-center gap-3 mb-20"
+          >
+            <a
+              href="#contact"
+              className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity"
+            >
+              Start a conversation
+            </a>
+            <a
+              href="#portfolio"
+              className="px-6 py-3 rounded-lg border border-border text-foreground font-medium text-sm hover:bg-card transition-colors"
+            >
+              See my work
+            </a>
+          </motion.div>
+
+          {/* Stats — horizontal, understated */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="flex flex-wrap gap-10 text-sm"
+          >
+            {[
+              { value: "7+", label: "years building with WordPress" },
+              { value: "50+", label: "projects delivered" },
+              { value: "4", label: "published plugins" },
+              { value: "6+", label: "WP Core teams" },
+            ].map((stat) => (
+              <div key={stat.label}>
+                <span className="text-lg font-semibold text-foreground">{stat.value}</span>
+                <span className="text-muted-foreground ml-1.5">{stat.label}</span>
+              </div>
+            ))}
+          </motion.div>
+        </div>
 
         {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
           <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
-            <ArrowDown className="w-5 h-5 animate-bounce" />
+            <ArrowDown className="w-4 h-4 animate-bounce" />
           </a>
         </motion.div>
       </div>

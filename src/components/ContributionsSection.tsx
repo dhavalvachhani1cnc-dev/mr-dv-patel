@@ -5,81 +5,67 @@ const contributions = [
   {
     icon: GitPullRequest,
     title: "WordPress Core",
-    description: "Submitted PRs to wordpress-develop, reported UI bugs in Core Trac, and fixed spacing issues in admin dashboard widgets.",
-    highlights: ["Core Trac tickets", "Pull requests to wordpress-develop", "Admin CSS fixes"],
+    detail: "PRs to wordpress-develop, Core Trac tickets, admin CSS fixes",
   },
   {
     icon: Languages,
-    title: "Translation Editor",
-    description: "Active Gujarati and Hindi Translation Editor — reviewed and translated 200+ strings for plugins including Classic Widgets, Openverse, and more.",
-    highlights: ["Gujarati PTE", "Hindi PTE", "200+ translations"],
+    title: "Translations",
+    detail: "Gujarati & Hindi Translation Editor — 200+ strings reviewed and translated",
   },
   {
     icon: Bug,
     title: "Meta & Bug Reports",
-    description: "Filed multiple Meta Trac tickets identifying UI bugs on WordPress.org — from broken video links to mobile header issues.",
-    highlights: ["Meta Trac tickets", "404 page scrollbar fix", "Mobile header bug"],
+    detail: "Meta Trac tickets for WordPress.org UI bugs — 404 scrollbar, mobile header issues",
   },
   {
     icon: Camera,
     title: "Photo Directory",
-    description: "Contributed 19 high-quality photos to the WordPress Photo Directory — landscapes, food photography, and landmark shots from India.",
-    highlights: ["19 photos contributed", "Openverse Contributor badge"],
+    detail: "19 photos contributed to WordPress Photo Directory — landscapes, food, landmarks",
   },
   {
     icon: BookOpen,
-    title: "Community & Events",
-    description: "Volunteered at WordCamp Ahmedabad 2023. Completed WordPress Meetup Organizer and WordCamp Organizer training courses.",
-    highlights: ["WordCamp volunteer", "Organizer training", "Community mentor"],
+    title: "Community",
+    detail: "WordCamp Ahmedabad 2023 volunteer, Meetup & WordCamp organizer training",
   },
 ];
 
 const ContributionsSection = () => {
   return (
-    <section id="contributions" className="py-24 md:py-32 bg-surface/30">
+    <section id="contributions" className="py-24 md:py-32">
       <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Open Source</h2>
-          <h3 className="text-3xl md:text-5xl font-bold text-foreground">
-            Giving back to <span className="text-gradient">WordPress</span>
-          </h3>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-            Contributing to Core, Meta, Polyglots, Photos, and Mobile teams — sponsored by Dallas Web Agency.
-          </p>
-        </motion.div>
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-12"
+          >
+            <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-2">
+              Open source contributions
+            </h2>
+            <p className="text-muted-foreground max-w-lg">
+              I volunteer across several WordPress teams — Core, Meta, Polyglots, Photos, and Mobile. 
+              Sponsored by Dallas Web Agency.
+            </p>
+          </motion.div>
 
-        <div className="max-w-4xl mx-auto space-y-4">
-          {contributions.map((item, i) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="flex gap-5 p-6 rounded-2xl bg-card border border-border hover:border-primary/20 transition-all"
-            >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                <item.icon className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h4 className="text-base font-semibold text-foreground mb-2">{item.title}</h4>
-                <p className="text-sm text-muted-foreground mb-3">{item.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {item.highlights.map((h) => (
-                    <span key={h} className="px-2 py-1 text-xs rounded-md bg-secondary text-secondary-foreground">
-                      {h}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          ))}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {contributions.map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                className="p-5 rounded-xl bg-card border border-border"
+              >
+                <item.icon className="w-4 h-4 text-primary mb-3" />
+                <h4 className="text-sm font-semibold text-foreground mb-1.5">{item.title}</h4>
+                <p className="text-xs text-muted-foreground leading-relaxed">{item.detail}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

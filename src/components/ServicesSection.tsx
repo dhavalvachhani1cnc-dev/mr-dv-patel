@@ -4,70 +4,72 @@ import { Code2, Palette, Puzzle, Zap, Globe, ShieldCheck } from "lucide-react";
 const services = [
   {
     icon: Palette,
-    title: "Custom Theme Development",
-    description: "Pixel-perfect, responsive WordPress themes built from scratch — optimized for speed, SEO, and your brand identity.",
+    title: "Custom Themes",
+    description: "Your design, built pixel-perfect in WordPress. Responsive, fast, and easy for your team to update.",
   },
   {
     icon: Puzzle,
     title: "Plugin Development",
-    description: "Custom WordPress plugins that extend functionality, automate workflows, and integrate with third-party APIs seamlessly.",
+    description: "Need functionality WordPress doesn't have? I build custom plugins that do exactly what you need — nothing more, nothing less.",
   },
   {
     icon: Code2,
     title: "WordPress Customization",
-    description: "Deep customization of existing themes and plugins — from layout tweaks to complex functional overhauls.",
+    description: "Tweaking an existing theme or overhauling a plugin. I dig into the code and make it work the way you actually want.",
   },
   {
     icon: Zap,
-    title: "Performance Optimization",
-    description: "Speed audits, caching strategies, database optimization, and Core Web Vitals improvements for lightning-fast sites.",
+    title: "Speed Optimization",
+    description: "Slow sites lose visitors. I run audits, fix Core Web Vitals, and get your load times under 2 seconds.",
   },
   {
     icon: Globe,
-    title: "API Integration",
-    description: "Connect WordPress with payment gateways, CRMs, email platforms, and any third-party service via REST or custom APIs.",
+    title: "API Integrations",
+    description: "Connecting WordPress to payment processors, CRMs, or any third-party service your business depends on.",
   },
   {
     icon: ShieldCheck,
-    title: "Maintenance & Support",
-    description: "Ongoing updates, security hardening, backups, and monitoring to keep your WordPress site running flawlessly.",
+    title: "Ongoing Support",
+    description: "Updates, security patches, backups, and monitoring. I keep sites running so you don't have to worry about it.",
   },
 ];
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-24 md:py-32 bg-surface/30">
+    <section id="services" className="py-24 md:py-32 bg-card/40">
       <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">Services</h2>
-          <h3 className="text-3xl md:text-5xl font-bold text-foreground">
-            What I can <span className="text-gradient">build</span> for you
-          </h3>
-        </motion.div>
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-14"
+          >
+            <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-3">
+              How I can help
+            </h2>
+            <p className="text-muted-foreground max-w-lg">
+              Most of my work falls into one of these areas. If your project doesn't fit neatly into a box, that's fine — let's talk about it.
+            </p>
+          </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {services.map((service, i) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group p-6 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-300 hover:glow-border"
-            >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
-                <service.icon className="w-6 h-6 text-primary" />
-              </div>
-              <h4 className="text-lg font-semibold text-foreground mb-3">{service.title}</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
-            </motion.div>
-          ))}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden">
+            {services.map((service, i) => (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                className="p-6 bg-background hover:bg-card transition-colors"
+              >
+                <service.icon className="w-5 h-5 text-primary mb-4" />
+                <h4 className="text-sm font-semibold text-foreground mb-2">{service.title}</h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

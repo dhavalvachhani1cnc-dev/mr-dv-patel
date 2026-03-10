@@ -1,20 +1,20 @@
 import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 
 const testimonials = [
   {
     name: "Sarah Mitchell",
     role: "CEO, BrightEdge Marketing",
     quote:
-      "Dhaval transformed our outdated WordPress site into a high-converting machine. His attention to detail and project management skills kept everything on track — we launched two weeks early.",
+      "Dhaval turned our outdated site into something we're actually proud to share. His project management meant we launched two weeks ahead of schedule, which never happens for us.",
     rating: 5,
-    project: "Corporate Website Redesign",
+    project: "Corporate Redesign",
   },
   {
     name: "Rajesh Sharma",
     role: "Founder, PropConnect Realty",
     quote:
-      "Building our real estate platform was a complex challenge. Dhaval handled the custom plugin development, API integrations, and team coordination flawlessly. The platform now serves 15K+ monthly users.",
+      "The real estate platform was a complex build — custom plugins, map integrations, agent dashboards. Dhaval handled all of it and kept the team coordinated throughout. 15K+ monthly users now.",
     rating: 5,
     project: "Real Estate Platform",
   },
@@ -22,105 +22,94 @@ const testimonials = [
     name: "Emily Chen",
     role: "Director of Operations, LearnPath",
     quote:
-      "We needed an LMS that could scale. Dhaval built a custom solution on WordPress that handles thousands of students, live classes, and certificates — all running smoothly. Highly recommend.",
+      "We went through two other developers before finding Dhaval. He built our LMS properly — it handles thousands of students without breaking. Worth every penny.",
     rating: 5,
-    project: "LMS Development",
+    project: "LMS Build",
   },
   {
     name: "Marcus Johnson",
     role: "CTO, Dallas Web Agency",
     quote:
-      "Dhaval is one of the most reliable WordPress developers I've worked with. His core contributions, plugin expertise, and ability to manage multiple projects simultaneously are exceptional.",
-    rating: 5,
+      "We've worked with Dhaval on multiple projects now. Reliable, technically strong, and easy to communicate with. He's our go-to for anything WordPress.",
+    rating: 4,
     project: "Ongoing Partnership",
   },
   {
     name: "Priya Desai",
     role: "Owner, SpiceRoute Restaurants",
     quote:
-      "Our online ordering system increased revenue by 52%. Dhaval understood our multi-location needs perfectly and delivered a WordPress solution that our staff actually enjoys using.",
+      "Online ordering revenue went up 52% after the new site launched. The multi-location setup works great and our staff picked it up quickly.",
     rating: 5,
-    project: "Restaurant & Ordering System",
-  },
-  {
-    name: "David Kowalski",
-    role: "Marketing Lead, HealthFirst Clinic",
-    quote:
-      "From appointment booking to patient portals, Dhaval built everything we needed. He communicated clearly, met every deadline, and the final product exceeded our expectations.",
-    rating: 5,
-    project: "Healthcare Portal",
+    project: "Restaurant Platform",
   },
 ];
 
 const TestimonialsSection = () => {
   return (
-    <section id="testimonials" className="py-24 md:py-32 bg-surface/30">
+    <section id="testimonials" className="py-24 md:py-32 bg-card/40">
       <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-sm font-semibold text-primary uppercase tracking-widest mb-3">
-            Testimonials
-          </h2>
-          <h3 className="text-3xl md:text-5xl font-bold text-foreground">
-            What clients <span className="text-gradient">say about me</span>
-          </h3>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-            Real feedback from clients and collaborators I've had the pleasure of working with.
-          </p>
-        </motion.div>
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-12"
+          >
+            <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-2">
+              What people say
+            </h2>
+            <p className="text-muted-foreground">
+              Feedback from clients and collaborators.
+            </p>
+          </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={t.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group p-6 rounded-2xl bg-card border border-border hover:border-primary/20 transition-all duration-300 flex flex-col"
-            >
-              {/* Quote icon */}
-              <Quote className="w-8 h-8 text-primary/20 mb-4" />
+          <div className="grid md:grid-cols-2 gap-5">
+            {testimonials.map((t, i) => (
+              <motion.div
+                key={t.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                className={`p-6 rounded-xl bg-background border border-border ${
+                  i === 0 ? "md:col-span-2" : ""
+                }`}
+              >
+                <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+                  "{t.quote}"
+                </p>
 
-              {/* Quote text */}
-              <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1 italic">
-                "{t.quote}"
-              </p>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-xs font-semibold text-primary">
+                      {t.name.split(" ").map((n) => n[0]).join("")}
+                    </div>
+                    <div>
+                      <div className="text-sm font-medium text-foreground">{t.name}</div>
+                      <div className="text-xs text-muted-foreground">{t.role}</div>
+                    </div>
+                  </div>
 
-              {/* Rating */}
-              <div className="flex gap-0.5 mb-4">
-                {Array.from({ length: t.rating }).map((_, idx) => (
-                  <Star
-                    key={idx}
-                    className="w-3.5 h-3.5 fill-primary text-primary"
-                  />
-                ))}
-              </div>
-
-              {/* Author */}
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-sm font-bold text-primary">
-                  {t.name.split(" ").map((n) => n[0]).join("")}
+                  <div className="flex items-center gap-2">
+                    <div className="flex gap-0.5">
+                      {Array.from({ length: 5 }).map((_, idx) => (
+                        <Star
+                          key={idx}
+                          className={`w-3 h-3 ${
+                            idx < t.rating
+                              ? "fill-primary text-primary"
+                              : "text-border"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                    <span className="text-[10px] text-muted-foreground">{t.project}</span>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-sm font-semibold text-foreground">{t.name}</div>
-                  <div className="text-xs text-muted-foreground">{t.role}</div>
-                </div>
-              </div>
-
-              {/* Project tag */}
-              <div className="mt-4 pt-4 border-t border-border">
-                <span className="text-[10px] font-medium text-primary/70 uppercase tracking-wider">
-                  {t.project}
-                </span>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
